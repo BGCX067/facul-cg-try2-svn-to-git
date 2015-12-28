@@ -1,0 +1,34 @@
+ * Com OpenGL, usar funções estáticas. 
+	É perda de tempo ter que ficar criando objetos
+
+ * Procurar centralizar as chamadas para funçoes que dependem 
+	de biblioteca gráfica em uma classe só. Facilita
+   . Trocar de biblioteca gráfica
+   . Criar MVC
+   . Rodar em text-mode (sem gráficos)
+   . Evita #ifdef's dentro dos objetos
+   - Funcao Utils::get_window_size() deveria pertencer a ela, 
+	nao à Utils, pois só é possível ter uma janela de cada
+	vez, e isso diz respeito à biblioteca gráfica!
+
+ * Definir e usufruir dos ESTADOS desde o inicio, ajuda muito!
+
+ * Herança quebra um baita galho!
+
+ * Versionar o estritamente necessário.
+
+ * Nas funcoes OBJ->draw() colocar a LÓGICA de QUANDO desenhar
+	dependendo do estado do jogo; COMO desenhar, desenhar 
+	com a cor a mesma cor do fundo (invisivel)?
+   . E assim "terceirizar" o desenho para a classe que contem
+	as funçoes da biblioteca gráfica.
+
+ * Adicionar ifdefs para debug? Complicado debugar quando da um freeze... :\
+
+ * Será que compensaria fazer "orientado à mensagens"?
+   . Aí haveria um vector responsável por ir guardando as
+	msg recebidas (defines do tipo: MSG_PAUSAR_JOGO)
+	e dependendo de cada msg se tomaria a ação apropriada...
+
+** Projetar ANTES, nunca durante. :p
+
